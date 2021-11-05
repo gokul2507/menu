@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Menu</title>
+     <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css" />
+     <!-- <link rel="stylesheet" href="../../fontawsome/css/all.css"> -->
+</head>
+
+<body>
+     <div class="">
+          <div class="header">
+               <div class="menu">
+                    <a href="#" class="icons active">
+                         <i class="fa-regular fa-house-chimney"></i>
+                    </a>
+                    <a href="#" class="icons">
+                         <i class="fa-regular fa-user"></i>
+                    </a>
+                    <a href="#" class="icons">
+                         <i class="fa-regular fa-circle-plus"></i>
+                    </a>
+                    <a href="#" class="icons">
+                         <i class="fa-regular fa-gear"></i>
+                    </a>
+                    <a href="#" class="icons">
+                         <i class="fa-regular fa-comment"></i>
+                    </a>
+                    <div class="mark"></div>
+               </div>
+
+          </div>
+     </div>
+     <script>
+          function fun(q) {
+               q.addEventListener("click", activate);
+          }
+          var x = document.querySelectorAll(".icons");
+          var y = document.getElementsByClassName("mark")[0];
+          let d = ["#5da6ff", "#ff0", "#0f0", "#df2fff", "#ff308f"];
+          x.forEach(fun, this);
+          function activate() {
+               x.forEach((e) => e.classList.remove("active"));
+               this.classList.add("active");
+               for (let i = 0; i < 5; i++) {
+                    if (x[i].classList.contains("active")) {
+                         y.style.backgroundColor = d[i];
+                         y.style.boxShadow = `0 0 15px ${d[i]}, 0 0 30px ${d[i]}, 0 0 45px ${d[i]},0 0 60px ${d[i]}`;
+                         break;
+                    }
+               }
+               y.style.left = this.offsetLeft + 40 + "px";
+          }
+
+     </script>
+</body>
+
+</html>
