@@ -36,19 +36,34 @@ a {
 .mark {
   position: absolute;
   top: -10px;
-  left: 50px;
+  left: 40px;
   transition: 0.4s;
   transform: translateX(-50%);
   width: 50px;
   height: 40px;
-  background: #5de6ff;
+  background: #5da6ff;
   border-radius: 8px;
-  box-shadow: 0 0 15px #5de6ff, 0 0 30px #5de6ff, 0 0 45px #5de6ff,
-    0 0 60px #5de6ff;
+  box-shadow: 0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff,
+    0 0 60px #5da6ff;
 }
 .active {
   backdrop-filter: blur(15px);
 }
 .menu .active i {
   opacity: 1;
+}
+@media (max-width: 500px) {
+  .menu {
+    flex-direction: column;
+  }
+  .mark {
+    top: 20px;
+    left: 70px;
+  }
+}
+@media (min-width: 501px) {
+  .mark {
+    top: -10px;
+    left: 40px;
+  }
 }

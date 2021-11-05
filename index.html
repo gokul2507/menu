@@ -42,6 +42,7 @@
           var y = document.getElementsByClassName("mark")[0];
           let d = ["#5da6ff", "#ff0", "#0f0", "#df2fff", "#ff308f"];
           x.forEach(fun, this);
+
           function activate() {
                x.forEach((e) => e.classList.remove("active"));
                this.classList.add("active");
@@ -52,9 +53,31 @@
                          break;
                     }
                }
-               y.style.left = this.offsetLeft + 40 + "px";
-          }
+               if (!window.matchMedia("(max-width: 500px)").matches) {
+                    y.style.left = this.offsetLeft + 40 + "px";
+                    console.log(this.offsetLeft);
+               }
+               else {
+                    y.style.top = this.offsetTop + 20 + "px";
 
+               }
+          }
+          function init(q) {
+               x.forEach((e) => e.classList.remove("active"));
+               x[0].classList.add("active");
+               if (q.matches) {
+                    y.style.left = "70px";
+                    y.style.top = "20px";
+               }
+               else {
+                    y.style.left = "40px";
+                    y.style.top = "-10px";
+               }
+               y.style.backgroundColor = d[0];
+               y.style.boxShadow = `0 0 15px ${d[0]}, 0 0 30px ${d[0]}, 0 0 45px ${d[0]},0 0 60px ${d[0]}`;
+
+          }
+          window.matchMedia("(max-width: 500px)").addListener(init)
      </script>
 </body>
 
