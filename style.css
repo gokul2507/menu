@@ -23,8 +23,8 @@ a {
 .icons {
   position: relative;
   color: white;
-  font-size: 40px;
-  padding: 25px;
+  font-size: 35px;
+  padding: 20px;
   z-index: 1000;
 }
 .icons i {
